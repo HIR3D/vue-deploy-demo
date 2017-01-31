@@ -23,6 +23,9 @@ var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirect
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
 cp('-R', 'static/', assetsPath)
+rm('rf', path.join(config.build.assetsRoot, config.build.productionServerDirectory))
+console.log("Copying server info from" + config.build.serverDirectory)
+cp("-R", config.build.productionServerDirectory, config.build.assetsRoot)
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()

@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button @click="askWatson">search</button>
   </div>
 </template>
 
@@ -13,6 +14,17 @@ export default {
       // preserves its current state and we are modifying
       // its initial state.
       msg: 'Hello World!'
+    }
+  },
+  methods: {
+    askWatson () {
+     // GET /someUrl
+      this.$http.get('/api').then(response => {
+        // get body data
+        console.log(response.body)
+      }, response => {
+        // error callback
+      })
     }
   }
 }

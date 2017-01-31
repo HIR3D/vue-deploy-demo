@@ -7,10 +7,19 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, 'dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    productionSourceMap: true
+    productionSourceMap: true,
+    productionServerDirectory: path.resolve(__dirname, 'server')
   },
   dev: {
     port: 8080,
-    proxyTable: {}
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^api/': ''
+        }
+      }
+    }
   }
 }

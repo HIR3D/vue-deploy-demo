@@ -2,15 +2,17 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "personalblog",
-  "author": "sagar jauhari",
+  "author": "",
   "private": true,
   "scripts": {
+    "start": "node server/server.js",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "deploy": "git subtree push --prefix dist heroku master"
+    "deploy": "git subtree push --prefix dist heroku master",
+    "postinstall": "npm install express"
   },
   "dependencies": {
     "vue": "^1.0.18",
@@ -65,6 +67,7 @@
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^8.2.1",
+    "vue-resource": "^1.1.0",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",

@@ -1,10 +1,11 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "personalblog",
-  "author": "sagar jauhari",
+  "description": "",
+  "author": "",
   "private": true,
   "scripts": {
+    "start": "node server/server.js",
     "postinstall": "npm install express"
   }
 }
